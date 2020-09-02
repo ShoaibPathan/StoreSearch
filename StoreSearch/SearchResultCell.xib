@@ -22,21 +22,21 @@
                             <constraint firstAttribute="height" constant="60" id="y6W-Hk-4vg"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1un-qJ-O41">
-                        <rect key="frame" x="84" y="16" width="275" height="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1un-qJ-O41">
+                        <rect key="frame" x="84" y="16" width="275" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbH-9r-4mT">
-                        <rect key="frame" x="84" y="44" width="220" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbH-9r-4mT">
+                        <rect key="frame" x="84" y="43.5" width="271" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="IbH-9r-4mT" secondAttribute="trailing" constant="51" id="4Kg-gw-Whn"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="IbH-9r-4mT" secondAttribute="trailing" id="4Kg-gw-Whn"/>
                     <constraint firstItem="1un-qJ-O41" firstAttribute="top" secondItem="Ywy-kZ-Yez" secondAttribute="top" constant="16" id="A4f-u7-CYP"/>
                     <constraint firstItem="1un-qJ-O41" firstAttribute="leading" secondItem="Pg4-5p-qDN" secondAttribute="trailing" constant="8" id="M0f-Ba-luV"/>
                     <constraint firstItem="Pg4-5p-qDN" firstAttribute="top" secondItem="Ywy-kZ-Yez" secondAttribute="top" constant="10" id="Tfq-rA-3Ax"/>
