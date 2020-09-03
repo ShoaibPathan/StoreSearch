@@ -12,6 +12,7 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     struct TableView {
         struct CellIdentifiers {
@@ -45,11 +46,21 @@ class SearchViewController: UIViewController {
         
         searchBar.becomeFirstResponder()
         
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        var gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         gestureRecognizer.cancelsTouchesInView = false
         tableView.addGestureRecognizer(gestureRecognizer)
+        
+        gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        gestureRecognizer.cancelsTouchesInView = false
+        segmentedControl.addGestureRecognizer(gestureRecognizer)
     }
 
+    // MARK: - Actions
+    
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        performRequest()
+    }
+    
 }
 
 // MARK: - Helper Methods
@@ -60,9 +71,16 @@ extension SearchViewController {
         searchBar.resignFirstResponder()
     }
     
-    func iTunesURL(searchText: String) -> URL {
+    func iTunesURL(searchText: String, category: Int) -> URL {
+        let kind: String
+        switch category {
+            case 1: kind = "musicTrack"
+            case 2: kind = "software"
+            case 3: kind = "ebook"
+            default: kind = ""
+        }
         let encodedText = searchText.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        let urlString = String(format: "https://itunes.apple.com/search?term=%@", encodedText)
+        let urlString = "https://itunes.apple.com/search?" + "term=\(encodedText)&limit=200&entity=\(kind)"
         let url = URL(string: urlString)
         return url!
     }
@@ -78,24 +96,7 @@ extension SearchViewController {
         }
     }
     
-    func showNetworkError() {
-        let alert = UIAlertController(title: "Whoops...", message: "There was an error accessing the iTunes Store." + " Please try again.", preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-    }
-    
-}
-
-// MARK: - UISearchBarDelegate
-
-extension SearchViewController: UISearchBarDelegate {
-    
-    func position(for bar: UIBarPositioning) -> UIBarPosition {
-        return .topAttached
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    func performRequest() {
         if !searchBar.text!.isEmpty {
             searchBar.resignFirstResponder()
 
@@ -108,7 +109,7 @@ extension SearchViewController: UISearchBarDelegate {
             hasSearched = true
             searchResults = []
             
-            let url = iTunesURL(searchText: searchBar.text!)
+            let url = iTunesURL(searchText: searchBar.text!, category: segmentedControl.selectedSegmentIndex)
             let session = URLSession.shared
             dataTask = session.dataTask(with: url) { data, response, error in
                 if let error = error as NSError? {
@@ -140,6 +141,27 @@ extension SearchViewController: UISearchBarDelegate {
             }
             self.dataTask?.resume()
         }
+    }
+    
+    func showNetworkError() {
+        let alert = UIAlertController(title: "Whoops...", message: "There was an error accessing the iTunes Store." + " Please try again.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+}
+
+// MARK: - UISearchBarDelegate
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return .topAttached
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        performRequest()
     }
     
 }
