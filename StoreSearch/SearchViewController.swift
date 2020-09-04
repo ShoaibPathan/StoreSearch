@@ -60,7 +60,7 @@ class SearchViewController: UIViewController {
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         performRequest()
     }
-    
+        
 }
 
 // MARK: - Helper Methods
@@ -203,13 +203,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 
             let searchResult = searchResults[indexPath.row]
             
-            cell.nameLabel.text = searchResult.name
-            
-            if searchResult.artist.isEmpty {
-                cell.artistNameLabel.text = "Unknown"
-            } else {
-                cell.artistNameLabel.text = String(format: "%@ (%@)", searchResult.artist, searchResult.type)
-            }
+            cell.configure(for: searchResult)
             
             return cell
         }
