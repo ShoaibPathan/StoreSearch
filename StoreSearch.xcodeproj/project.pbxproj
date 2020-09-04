@@ -16,6 +16,8 @@
 		D223A61924FED94800759187 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223A61824FED94800759187 /* SearchViewController.swift */; };
 		D223A61C24FED94800759187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D223A61A24FED94800759187 /* Main.storyboard */; };
 		D223A61E24FED94B00759187 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D223A61D24FED94B00759187 /* Assets.xcassets */; };
+		D255BCA3250247D500D4B0D4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D255BCA2250247D500D4B0D4 /* DetailViewController.swift */; };
+		D255BCA72502586800D4B0D4 /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = D255BCA62502586800D4B0D4 /* UIView+CornerRadius.swift */; };
 		D27386DF25011AD000C1EEFB /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27386DE25011AD000C1EEFB /* UIImageView+DownloadImage.swift */; };
 		D2FE533025000EEA00302054 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FE532F25000EEA00302054 /* LoadingCell.xib */; };
 /* End PBXBuildFile section */
@@ -32,6 +34,8 @@
 		D223A61B24FED94800759187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D223A61D24FED94B00759187 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D223A62224FED94B00759187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D255BCA2250247D500D4B0D4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D255BCA62502586800D4B0D4 /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
 		D27386DE25011AD000C1EEFB /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 		D2FE532F25000EEA00302054 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,13 +73,15 @@
 				D223A61424FED94800759187 /* AppDelegate.swift */,
 				D223A61624FED94800759187 /* SceneDelegate.swift */,
 				D219483F24FEFA0E00F5427E /* SearchResult.swift */,
-				D223A61824FED94800759187 /* SearchViewController.swift */,
 				D21E38A624FF982B0097962B /* SearchResultCell.swift */,
 				D21E38A424FF920F0097962B /* SearchResultCell.xib */,
 				D21E38A824FF9C560097962B /* NothingFoundCell.xib */,
 				D2FE532F25000EEA00302054 /* LoadingCell.xib */,
-				D27386DE25011AD000C1EEFB /* UIImageView+DownloadImage.swift */,
+				D223A61824FED94800759187 /* SearchViewController.swift */,
+				D255BCA2250247D500D4B0D4 /* DetailViewController.swift */,
 				D223A61A24FED94800759187 /* Main.storyboard */,
+				D27386DE25011AD000C1EEFB /* UIImageView+DownloadImage.swift */,
+				D255BCA62502586800D4B0D4 /* UIView+CornerRadius.swift */,
 				D223A61D24FED94B00759187 /* Assets.xcassets */,
 				D223A62224FED94B00759187 /* Info.plist */,
 			);
@@ -156,11 +162,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D223A61924FED94800759187 /* SearchViewController.swift in Sources */,
+				D255BCA72502586800D4B0D4 /* UIView+CornerRadius.swift in Sources */,
 				D223A61524FED94800759187 /* AppDelegate.swift in Sources */,
 				D27386DF25011AD000C1EEFB /* UIImageView+DownloadImage.swift in Sources */,
 				D219484024FEFA0F00F5427E /* SearchResult.swift in Sources */,
 				D223A61724FED94800759187 /* SceneDelegate.swift in Sources */,
 				D21E38A724FF982B0097962B /* SearchResultCell.swift in Sources */,
+				D255BCA3250247D500D4B0D4 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
