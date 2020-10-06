@@ -70,22 +70,62 @@
 		D223A61324FED94800759187 /* StoreSearch */ = {
 			isa = PBXGroup;
 			children = (
-				D223A61424FED94800759187 /* AppDelegate.swift */,
-				D223A61624FED94800759187 /* SceneDelegate.swift */,
-				D219483F24FEFA0E00F5427E /* SearchResult.swift */,
-				D21E38A624FF982B0097962B /* SearchResultCell.swift */,
-				D21E38A424FF920F0097962B /* SearchResultCell.xib */,
-				D21E38A824FF9C560097962B /* NothingFoundCell.xib */,
-				D2FE532F25000EEA00302054 /* LoadingCell.xib */,
-				D223A61824FED94800759187 /* SearchViewController.swift */,
-				D255BCA2250247D500D4B0D4 /* DetailViewController.swift */,
-				D223A61A24FED94800759187 /* Main.storyboard */,
-				D27386DE25011AD000C1EEFB /* UIImageView+DownloadImage.swift */,
-				D255BCA62502586800D4B0D4 /* UIView+CornerRadius.swift */,
+				D2EF4AC2252C51EF00CD2009 /* Models */,
+				D2EF4AC0252C51BB00CD2009 /* Views */,
+				D2EF4ABF252C51A300CD2009 /* Controllers */,
+				D2EF4ABE252C518D00CD2009 /* Supporting Files */,
+				D2EF4AC3252C51FB00CD2009 /* Extensions */,
 				D223A61D24FED94B00759187 /* Assets.xcassets */,
 				D223A62224FED94B00759187 /* Info.plist */,
 			);
 			path = StoreSearch;
+			sourceTree = "<group>";
+		};
+		D2EF4ABE252C518D00CD2009 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D223A61424FED94800759187 /* AppDelegate.swift */,
+				D223A61624FED94800759187 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2EF4ABF252C51A300CD2009 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D255BCA2250247D500D4B0D4 /* DetailViewController.swift */,
+				D223A61824FED94800759187 /* SearchViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D2EF4AC0252C51BB00CD2009 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D223A61A24FED94800759187 /* Main.storyboard */,
+				D21E38A624FF982B0097962B /* SearchResultCell.swift */,
+				D21E38A424FF920F0097962B /* SearchResultCell.xib */,
+				D21E38A824FF9C560097962B /* NothingFoundCell.xib */,
+				D2FE532F25000EEA00302054 /* LoadingCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D2EF4AC2252C51EF00CD2009 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D219483F24FEFA0E00F5427E /* SearchResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D2EF4AC3252C51FB00CD2009 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D27386DE25011AD000C1EEFB /* UIImageView+DownloadImage.swift */,
+				D255BCA62502586800D4B0D4 /* UIView+CornerRadius.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +347,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7995LB4979;
 				INFOPLIST_FILE = StoreSearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,7 +355,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ufukcanli.StoreSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -325,6 +366,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7995LB4979;
 				INFOPLIST_FILE = StoreSearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,7 +374,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ufukcanli.StoreSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
